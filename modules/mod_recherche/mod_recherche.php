@@ -22,6 +22,11 @@
 					    case 'afficherListe':
 					    	$this->controleur->afficherResultats();
 					    break;
+					    case 'test':
+					    	/*echo "On a réccupéré ceci : <br/>";
+					    	var_dump($_POST);*/
+					    	$this -> controleur -> test($_POST);
+					    break;
 					    default :
 							echo "Veuillez saisir une action";
 						break;

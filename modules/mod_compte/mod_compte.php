@@ -31,6 +31,10 @@
 						$id = $_GET['id'];
 						$this->controleur->supprimerAnnonce($id);
 						break;
+                        
+                    case 'confirmation':
+                        $this->controleur->confirmerCompte();
+                        break;
 
 					default:
 						$this->controleur->afficherCompte();

@@ -1,145 +1,128 @@
-body{
-	margin: auto;
-	padding: 0;
+html {
+	height: 100%;
+}
+body {
+	min-height: 100vh !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+footer {
+	clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
 }
 
-.form-group{
-display: inline-block;
-width: 300px;
-color : red;
+footer p {
+	color:rgba(138,138,138,1.00);
+	font-size: 12px;
 }
-
-
-#button-rechercher{
+.form-group {
+	display: inline-block;
+	width: 300px;
+	color : red;
+}
+#button-rechercher {
 	margin: 20px;
 }
-
-#prix{
-margin-top: 47px;
-
+#prix {
+	margin-top: 47px;
 }
-
-#carburant{
-	margin-left: 14px; 
+#carburant {
+	margin-left: 14px;
 }
-
-#recherche{
-	
+#recherche {
 	height: 400px;
 	width: 100%;
 	background-image: url(../images/fond-recherche.jpg);
-	
 }
-
-#textareaMessage{
+#textareaMessage {
 	height: 200px;
 }
-
-#CacherLogin{
+#CacherLogin {
 	display: none;
 }
-
-.modal-content{
+.modal-content {
 	border-radius: 30px;
 }
-
 .logoCo {
 	display: flex;
 	justify-content: space-evenly;
 	margin: 15px;
 }
-
-#loginh5{
+#loginh5 {
 	display: flex;
 	justify-content: center;
 	width: 100%;
 }
-
-
-#logoLogin img{
+#logoLogin img {
 	width: 130px;
 	height: 130px;
-
-
 }
-
-#logoLogin{
+#logoLogin {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 15px;
-
 }
-
-#buttonLoginWith{
+#buttonLoginWith {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 5px;
 }
-
-.logoCo a{
+.logoCo a {
 	width: 80px;
 	height: 80px;
-	background:#fff;
+	background: #fff;
 	text-align: center;
 	line-height: 80px;
 	font-size: 35px;
 	position: relative;
-	cursor:pointer;
+	cursor: pointer;
 	overflow: hidden;
 	border-radius: 50%;
 	border: 3px solid #fff;
 	z-index: 1;
-
 }
-
-.logoCo a .fa{
+.logoCo a .fa {
 	position: relative;
 	transition: 1.5s;
 	color: #262626;
 	z-index: 3;
-
 }
 .logoCo a:hover .fa {
- 	transform: rotateY(360deg);
+	transform: rotateY(360deg);
 	color: #fff;
 }
-
 .logoCo a::before {
- 	content: '';
+	content: '';
 	position: absolute;
-	top:100%;
-	left:0;
+	top: 100%;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	transition: 1.5s;
 	z-index: 2;
 }
-
 .logoCo a:hover::before {
 	top: 0;
 }
-
-#twCo::before	{
+#twCo::before {
 	background: #55acee;
 }
-
-#fbCo::before	{
+#fbCo::before {
 	background: #3b5999;
 }
-
-#gCo::before	{
+#gCo::before {
 	background: #dd4b39;
 }
-
-.separationOu{
+.separationOu {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 	margin-bottom: 10px;
 	margin-top: 2px;
 }
-
-.separationOu label{
+.separationOu label {
 	margin: 5px;
 	background: #BDC3C7;
 	width: 40px;
@@ -149,52 +132,40 @@ margin-top: 47px;
 	text-align: center;
 	color: white;
 }
-
-.separationOu::after, .separationOu::before{
+.separationOu::after, .separationOu::before {
 	content: "";
 	width: 44%;
 	border-top: 2px solid black;
-
 }
-
-#nom_erreur p{
+#nom_erreur p {
 	color: red;
 	font-size: 0.875rem;
 	margin-left: 35px;
 }
-
-#email_erreur p{
+#email_erreur p {
 	color: red;
 	font-size: 0.875rem;
 	margin-left: 35px;
 }
-
-#cPassword_erreur p{
+#cPassword_erreur p {
 	color: red;
 	font-size: 0.875rem;
 	margin-left: 35px;
 }
-
-
 #navEspaceMembre {
 	width: 100%;
 }
-
 #navEspaceMembre li {
 	width: 50%;
 }
-
 #navEspaceMembre li a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-
 #navEspaceMembre i {
 	margin: 5px;
 }
-
-
 /****** INPUT DESIGN *****/
 
 /*
@@ -276,35 +247,33 @@ margin-top: 47px;
 
 */
 
- #euro{
- 	padding: 10px;
- }
-
-.imgDesign{
-
+#euro {
+	padding: 10px;
+}
+.imgDesign {
 	width: 130px;
 	margin: 10px;
 }
-
 .fileUpload {
-    position: relative;
-    overflow: hidden;
+	position: relative;
+	overflow: hidden;
 }
 .fileUpload input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0;
-    filter: alpha(opacity=0);
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
 }
-
-
-.img-fluid{
-	
+.img-fluid {
 	height: 482px;
 }
+/* ADMIN */
 
+#tabSearchUser {
+	visibility: hidden;
+}

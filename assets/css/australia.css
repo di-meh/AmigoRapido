@@ -1,0 +1,15 @@
+/**
+ * Will put all text upside down.
+ * @author Haroen Viaene <hello@haroen.me>
+ * @author Bullgit <https://bullg.it>
+ * @license WTFPL Do What The Fuck You Want Public License
+ * @version 0.1
+ */
+h1, h2, h3, h4, h5, h6, p, dt, dd, li, blockquote, img, div{
+  -webkit-transform:rotate(-132deg) !important;
+  -moz-transform:rotate(-132deg) !important;
+  -o-transform:rotate(-132deg) !important;
+  transform:rotate(-132deg) !important;
+  ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)" !important;
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2) !important;
+}

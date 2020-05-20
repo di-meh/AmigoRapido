@@ -1,0 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Almarai&display=swap');
+html, body, h1, h2, h3, h4, h5, h6, p, dt, dd, li, blockquote {
+    font-family: 'Almarai', sans-serif;
+}

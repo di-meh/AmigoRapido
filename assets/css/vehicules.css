@@ -1,0 +1,33 @@
+#corps {
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-top: 25px;
+}
+.carte-voiture {
+	background-color: rgba(255,255,255,1.00);
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+}
+#immatriculation {
+	position: relative;
+	text-align: center;
+	color: rgba(26,26,26,1.00);
+	margin-bottom: 15px;
+}
+#immatriculation img {
+	-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
+}
+.centered {
+	z-index: 999;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 1.5vw;
+}

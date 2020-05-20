@@ -12,7 +12,7 @@
 
 		}
 
-		function afficherRecherche(){
+		function afficherRecherche() {
 			if(!isset($_SESSION['id_utilisateur'])){
 				$this -> vue -> affichageInfoConnexion();
 			} else {
@@ -21,15 +21,21 @@
 					"lieux" => $this->modele->lieux()
 				);
 
-				/*$data = array("categorie" => $this->modele->categorie(),
-						  "marque" => $this->modele->marque(),
-						  "modele" => $this->modele->modele(),
-						  "prix" => $this->modele->prix(),
-						  "carburant" => $this->modele->carburant()
-				);*/
 				$this->vue->vue_recherche($data);
 			}	
-		}	
+		}
+
+		function test($d) {
+			$date = $this->modele->formateDate($_POST['dateDepart']);
+
+			$paysD = $_POST['pays'];
+			$villeD = $_POST['ville'];
+
+			$paysA  = $_POST['paysDest'];
+			$villeA = $_POST['villeDest'];
+
+			$this -> vue -> affichageResultats($this -> modele -> chercheTrajet($paysD, $villeD, $paysA, $villeA, $date));
+		}
 
 		function afficherResultats() {
 			$this->vue->affichageResultats();

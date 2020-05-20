@@ -13,14 +13,20 @@ class ModuleDeposer extends ModuleGenerique
 			$action = htmlspecialchars($_GET["action"]);
 						switch ($action) {
 				case 'afficherDeposer':
-				$this->controleur->afficherDeposer();
+					$this->controleur->afficherDeposer();
 				break;
 				case 'afficherValidationTrajet':
-				$this->controleur->afficherValidationTrajet();
+					$this->controleur->afficherValidationTrajet();
 				break;
 				case 'soumettreInformationTrajet':
-				$this->controleur->soumettreInformationTrajet();
+					$this->controleur->soumettreInformationTrajet();
 				break;
+				case 'ajoutNvLieuBD':
+					$this->controleur->ajoutLieuBD();
+				break;
+				case 'calculPxAnnonce':
+					$this->controleur->calculPxAnnonce();
+					break;
 				case 'terminer':
 				$this->controleur->terminer();
 				break;
@@ -34,4 +40,3 @@ class ModuleDeposer extends ModuleGenerique
 		}
 	}
 }
-?>

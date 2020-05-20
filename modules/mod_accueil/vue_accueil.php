@@ -39,25 +39,25 @@ class VueAccueil extends VueGenerique {
 
 				<div class="row">
 					<div class="col-md-3 col-sm-6 highlight">
-						<div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>Facile d'utilisation</h4></div>
-						<div class="h-body text-center">.
+						<div class="h-caption"><h4><em data-emoji="gear" class="big"></em><br><br>Facile d'utilisation</h4></div>
+						<div class="h-body text-center">
 							<p>Les démarches sont faciles , rapides et vous permettent de vous mettre en liaison avec des conducteurs et passagers en quelques minutes</p>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 highlight">
-						<div class="h-caption"><h4><i class="fa fa-flash fa-5"></i>Eco-responsable</h4></div>
+						<div class="h-caption"><h4><em data-emoji="zap" class="big"></em><br><br>Eco-responsable</h4></div>
 						<div class="h-body text-center">
 							<p>Réduisez les consommations de nos énergies au travers du co-voiturage .</p>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 highlight">
-						<div class="h-caption"><h4><i class="fa fa-heart fa-5"></i>De superbes rencontres</h4></div>
+						<div class="h-caption"><h4><em data-emoji="cupid" class="big"></em><br><br>De superbes rencontres</h4></div>
 						<div class="h-body text-center">
 							<p>Vous gagnez de l'argent , mais aussi des amis ! C'est pas beau ça ? </p>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 highlight">
-						<div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>Toujours à l'écoute</h4></div>
+						<div class="h-caption"><h4><em data-emoji="clown" class="big"></em><br><br>Toujours à l'écoute</h4></div>
 						<div class="h-body text-center">
 							<p>Votre voyage était super ? Ou au contraire rien n'allait ...? Dans tous les cas , faites parvenir vos avis sur le site afin d'en informer les autres utilisateurs ! De plus , une assistance clientèle est présente pour s'assurer du bon fonctionnement de votre voyage !</p>
 						</div>

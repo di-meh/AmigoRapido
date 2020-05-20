@@ -17,10 +17,11 @@ class ControleurDeposer extends ControleurGenerique {
 		} else {
 			$data = array(
 				"depart" => $this->modele->lieux(),
-				"arrivee" => $this->modele->lieux()
+				"arrivee" => $this->modele->lieux(),
+				"pays" => $this->modele->pays()
 			);
 
-			$this->vue->vue_informationVehicule($data);
+			$this->vue->vue_formDepotAnnonce($data);
 		}
 	}
 
@@ -34,7 +35,58 @@ class ControleurDeposer extends ControleurGenerique {
 	//Recolte des informations pour l'insertion dans la BD.
 	function soumettreInformationTrajet() {
 
-		if(!empty($_POST['lieu_depart'])&& !empty($_POST['lieu_arrivee']) && !empty($_POST['prix']) && !empty($_POST['date_depart']) && !empty($_POST['nombre'])) {
+		if(!empty($_POST['pays']) && !empty($_POST['ville']) && !empty($_POST['rue']) && !empty($_POST['paysDest']) && !empty($_POST['villeDest']) && !empty($_POST['rueDest']) && !empty($_POST['dateDepart']) && !empty($_POST['nombre']) && !empty($_POST['prix'])) {
+
+			//on check les préférences si oui => 1 sinon => 0
+
+			$fumeur = (!empty($_POST['fumeur']) ? true : false);
+			$enfant = (!empty($_POST['enfant']) ? true : false);
+			$animal = (!empty($_POST['animal']) ? true : false);
+
+			// on réccupère les id des lieux pour les insérer dans la table trajet. Permet de vérifier une dernière fois
+			// que les lieux existent bien
+
+			$id_lieu_depart = null;
+			$id_lieu_arrivee = null;
+
+			if(is_numeric($_POST['rue'][0])) {
+				//$tmp = explode( " ", $_POST['rue'] );
+
+				$tmp = substr(strstr($_POST['rue']," "), 1);
+
+				$strDep = $tmp . "," . $_POST['ville'] . "," . $_POST['pays'];
+				$id_lieu_depart = $this->modele->recupereInformationTrajet($strDep);
+			} else {
+				$strDep = ltrim($_POST['rue']) . "," . $_POST['ville'] . "," . $_POST['pays'];
+				$id_lieu_depart = $this->modele->recupereInformationTrajet($strDep);
+			}
+
+			if(is_numeric($_POST['rueDest'][0])) {
+				$tmp1 = substr(strstr($_POST['rueDest']," "), 1);
+
+				$strArr = $tmp1 . "," . $_POST['villeDest'] . "," . $_POST['paysDest'];
+				$id_lieu_arrivee = $this->modele->recupereInformationTrajet($strArr);
+			} else {
+				$strArr = ltrim($_POST['rueDest']) . "," . $_POST['villeDest'] . "," . $_POST['paysDest'];
+				$id_lieu_arrivee = $this->modele->recupereInformationTrajet($strArr);
+			}
+
+			//on formate la date selon de pattern choisi
+			$date = $this->modele->formateDate($_POST['dateDepart']);
+
+			// bonne insertion dans la BD
+			if($this->modele->insertInformationTrajet($id_lieu_depart, $id_lieu_arrivee, $date, $_POST['nombre'], $_POST['prix'])) {
+				$this->vue->vue_validationTrajet();
+			} // echec de l'ajout => erreur
+			else {
+				echo "ERREUR dans l'insertion";
+			}
+		} else {
+			echo 'Certaines informations viennent à manquer ou ne sont pas complètes';
+		}
+
+
+		/*if(!empty($_POST['lieu_depart'])&& !empty($_POST['lieu_arrivee']) && !empty($_POST['prix']) && !empty($_POST['date_depart']) && !empty($_POST['nombre'])) {
 
 			$date_depart = htmlspecialchars($_POST['date_depart']);
 			$prix = htmlspecialchars($_POST['prix']);
@@ -56,7 +108,7 @@ class ControleurDeposer extends ControleurGenerique {
 
 		} else {
 			echo 'pbm 2';
-		}
+		}*/
 
 
 
@@ -87,12 +139,21 @@ class ControleurDeposer extends ControleurGenerique {
 	$_SESSION['infoTrajet']['lieu_depart'], $_SESSION['infoTrajet']['lieu_arrivee'], $_SESSION['infoTrajet']['nombre'],$_SESSION['infoTrajet']['prix'], $_SESSION['infoTrajet']['date_depart'])
 
 			*/
-	}
+}
 
-	//Permet d'unset les variables de session et de retourner à l'accueil.
-	function terminer(){
-		unset($_SESSION['infoTrajet']);
-		header("Location:index.php?module=accueil");
+function ajoutLieuBD() {
+	if(!empty($_POST['street']) && !empty($_POST['city']) && !empty($_POST['country']) && !empty($_POST['lat']) && !empty($_POST['lng'])) {
+		$this->modele->insertIntoDBPlace($_POST['home'], $_POST['street'], $_POST['city'], $_POST['country'], $_POST['lat'], $_POST['lng']);
 	}
 }
-?>
+
+function calculPxAnnonce() {
+	$this->modele->calculPxAPI($_POST['depart'], $_POST['arrivee']);
+}
+
+	//Permet d'unset les variables de session et de retourner à l'accueil.
+function terminer(){
+	unset($_SESSION['infoTrajet']);
+	header("Location:index.php?module=accueil");
+}
+}
