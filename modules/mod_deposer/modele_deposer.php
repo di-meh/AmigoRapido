@@ -80,7 +80,7 @@ class ModeleDeposer extends ModeleGenerique {
 	function calculPxAPI($d, $a) {
 		$depart = urlencode( htmlspecialchars( $d ));
 		$arrivee = urlencode( htmlspecialchars( $a ));
-		$jsonMatrix = file_get_contents( "https://maps.googleapis.com/maps/api/distancematrix/json?units=metrics&origins=$depart&destinations=$arrivee&key=AIzaSyDK3l80CD5NKh7rJ3cxr8xEfbKnyNkAPfU" );
+		$jsonMatrix = file_get_contents( "https://maps.googleapis.com/maps/api/distancematrix/json?units=metrics&origins=$depart&destinations=$arrivee&key=" );
 
 		$objMatrix = json_decode( $jsonMatrix, true );
 
