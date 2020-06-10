@@ -34,7 +34,7 @@
 <script>
 	function ajouterAdresse() {
 		var inputAdr = document.getElementById( 'adresse' ).value;
-		$.getJSON( 'https://maps.googleapis.com/maps/api/geocode/json?address=' + inputAdr + '&key=AIzaSyDK3l80CD5NKh7rJ3cxr8xEfbKnyNkAPfU', function ( data ) {
+		$.getJSON( 'https://maps.googleapis.com/maps/api/geocode/json?address=' + inputAdr + '&key=', function ( data ) {
 			if ( data.status == "ZERO_RESULTS" ) {
 				document.getElementById( 'output' ).innerHTML = data.status;
 			} else {
