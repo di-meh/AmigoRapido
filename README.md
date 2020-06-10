@@ -1,6 +1,9 @@
 # AmigoRapido
-Projet effectué dans le cadre d'un TP pour l'UQAC dans la matière "Technologies Web Avancées"
+Projet effectué dans le cadre d'un TP pour l'UQAC dans la matière "Technologies Web Avancées".
+
 Créé en dehors de Git.
+
+http://amigorapido.turtletv.fr/
 
 ## Membres
 Arthur Vadrot, Milan Camus et Mehdi Saber.
