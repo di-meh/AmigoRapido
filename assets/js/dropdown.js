@@ -318,7 +318,7 @@ function checkEtatInputDeptRtr(input, dropdown, lieuMenu, iconInput) {
 function chercherAdresse(adresse, bLL) {
 	var reccupObj = null;
 	return new Promise((resolve, reject) => {
-		var t = $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=' + adresse + '&key=AIzaSyDK3l80CD5NKh7rJ3cxr8xEfbKnyNkAPfU', function (data) {
+		var t = $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=' + adresse + '&key=', function (data) {
 			console.log('datas : ', data);
 
 			if (data.status == "ZERO_RESULTS") {
