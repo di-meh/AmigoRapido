@@ -7,7 +7,7 @@ $connexion = $connexion->init();
 if(isset($_POST["depart"]) && isset($_POST["arrivee"])) {
 	$depart = urlencode( htmlspecialchars($_POST["depart"]));
 		$arrivee = urlencode( htmlspecialchars($_POST["arrivee"]));
-	$jsonMatrix = file_get_contents( "https://maps.googleapis.com/maps/api/distancematrix/json?units=metrics&origins=$depart&destinations=$arrivee&key=AIzaSyDK3l80CD5NKh7rJ3cxr8xEfbKnyNkAPfU" );
+	$jsonMatrix = file_get_contents( "https://maps.googleapis.com/maps/api/distancematrix/json?units=metrics&origins=$depart&destinations=$arrivee&key=" );
 
 	$objMatrix = json_decode( $jsonMatrix, true );
 
